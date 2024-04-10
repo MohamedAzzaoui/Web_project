@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des notes</title>
+</head>
+<body>
+    <h1>Liste des notes</h1>
+    <ul>
+        {% for note in object_list %}
+            <li><a href="{% url 'note_detail' note.pk %}">{{ note.title }}</a></li>
+        {% empty %}
+            <li>Aucune note n'est disponible pour le moment.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'note_create' %}">Ajouter une nouvelle note</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails de la note</title>
+</head>
+<body>
+    <h1>{{ note.title }}</h1>
+    <p>{{ note.content }}</p>
+    <p>Créée le : {{ note.created_at }}</p>
+    <p>Dernière mise à jour le : {{ note.updated_at }}</p>
+    <a href="{% url 'note_update' note.pk %}">Modifier</a>
+    <form action="{% url 'note_delete' note.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Supprimer">
+    </form>
+</body>
+</html>
