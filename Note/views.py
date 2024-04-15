@@ -25,4 +25,5 @@ class NoteUpdate(UpdateView):
 
 class NoteDelete(DeleteView):
     model = Note
+    template_name = 'note_confirm_delete.html'
     success_url = reverse_lazy('note_list')

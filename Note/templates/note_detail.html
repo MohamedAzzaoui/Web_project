@@ -2,17 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Détails de la note</title>
+    <title>Note Details</title>
 </head>
 <body>
     <h1>{{ note.title }}</h1>
     <p>{{ note.content }}</p>
-    <p>Créée le : {{ note.created_at }}</p>
-    <p>Dernière mise à jour le : {{ note.updated_at }}</p>
-    <a href="{% url 'note_update' note.pk %}">Modifier</a>
-    <form action="{% url 'note_delete' note.pk %}" method="post">
-        {% csrf_token %}
-        <input type="submit" value="Supprimer">
-    </form>
+    <p>Created at: {{ note.created_at }}</p>
+    <p>Last updated at: {{ note.updated_at }}</p>
+    <a href="{% url 'note_update' note.pk %}">Edit</a>
+    <a href="{% url 'note_delete' object.pk %}">Delete</a>
 </body>
 </html>

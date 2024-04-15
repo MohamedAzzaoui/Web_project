@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Liste des notes</title>
+    <title>List of Notes</title>
 </head>
 <body>
-    <h1>Liste des notes</h1>
+    <h1>List of Notes</h1>
     <ul>
         {% for note in object_list %}
             <li><a href="{% url 'note_detail' note.pk %}">{{ note.title }}</a></li>
         {% empty %}
-            <li>Aucune note n'est disponible pour le moment.</li>
+            <li>No notes are available at the moment.</li>
         {% endfor %}
     </ul>
-    <a href="{% url 'note_create' %}">Ajouter une nouvelle note</a>
+    <a href="{% url 'note_create' %}">Add a New Note</a>
 </body>
 </html>

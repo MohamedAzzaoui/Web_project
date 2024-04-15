@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmation de suppression</title>
+    <title>Deletion Confirmation</title>
 </head>
 <body>
-    <h1>Confirmez-vous la suppression de la note "{{ object.title }}" ?</h1>
+    <h1>Are you sure you want to delete the note "{{ object.title }}"?</h1>
     <form action="{% url 'note_delete' object.pk %}" method="post">
         {% csrf_token %}
-        <input type="submit" value="Confirmer">
+        <input type="submit" value="Confirm">
     </form>
-    <a href="{% url 'note_detail' object.pk %}">Annuler</a>
+    <a href="{% url 'note_detail' object.pk %}">Cancel</a>
 </body>
 </html>
