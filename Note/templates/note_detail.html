@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Note Details</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'details.css' %}">
 </head>
 <body>
-    <h1>{{ note.title }}</h1>
-    <p>{{ note.content }}</p>
-    <p>Created at: {{ note.created_at }}</p>
-    <p>Last updated at: {{ note.updated_at }}</p>
-    <a href="{% url 'note_update' note.pk %}">Edit</a>
-    <a href="{% url 'note_delete' object.pk %}">Delete</a>
+    <div class="container">
+        <h1>{{ note.title }}</h1>
+        <p>{{ note.content }}</p>
+        <p>Created at: {{ note.created_at }}</p>
+        <p>Last updated at: {{ note.updated_at }}</p>
+        <a class="link-button" href="{% url 'note_update' note.pk %}">Edit</a>
+        <a class="link-button" href="{% url 'note_delete' object.pk %}">Delete</a>
+    </div>
 </body>
 </html>
