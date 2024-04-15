@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deletion Confirmation</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'delete.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'global.css' %}">
 </head>
 <body>
     <div class="container">
         <h1>Are you sure you want to delete the note "{{ object.title }}"?</h1>
         <form action="{% url 'note_delete' object.pk %}" method="post">
             {% csrf_token %}
-            <input type="submit" value="Confirm" class="link-button">
-            <a href="{% url 'note_detail' object.pk %}" class="link-button">Cancel</a>
+            <input type="submit" value="Confirm" class="button link-button">
+            <a href="{% url 'note_detail' object.pk %}" class="button link-button cancel-button">Cancel</a>
         </form>        
     </div>
 </body>

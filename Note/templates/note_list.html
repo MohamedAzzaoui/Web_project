@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List of Notes</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" id="theme-style">
+    <link rel="stylesheet" type="text/css" href="{% static 'global.css' %}" id="theme-style">
 </head>
 <body>
     <div class="container" id="container">
@@ -14,10 +14,10 @@
             {% for note in object_list %}
             <li>
                 <div class="note">
-                    <a class="note-info" href="{% url 'note_detail' note.pk %}">
+                    <a class="note-info" href="{% url 'note_detail' note.pk %}">                    
                         <h2>{{ note.title }}</h2>
-                        <p>{{ note.created_at }}</p>
-                        <p>{{ note.content }}</p>
+                        <p class="note-info-created">{{ note.created_at }}</p>
+                        <p class="note-info-content">{{ note.content }}</p>
                     </a>
                 </div>
             </li>
@@ -25,7 +25,7 @@
             <li>No notes are available at the moment.</li>
             {% endfor %}
         </ul>
-        <a class="link-button" href="{% url 'note_create' %}">Add a New Note</a>
+        <a class="button link-button" href="{% url 'note_create' %}">New Note</a>
     </div>
 </body>
 </html>
