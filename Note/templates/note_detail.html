@@ -12,7 +12,8 @@
         <p>{{ note.content }}</p>
         <div class="note-data">
             <p class="note-creation-date">Created at: {{ note.created_at }}</p>
-            <p class="note-last-update">Last updated at: {{ note.updated_at }}</p></div>
+            <p class="note-last-update">Last updated at: {{ note.updated_at }}</p>
+        </div>
         <a class="button link-button" href="{% url 'note_update' note.pk %}">Edit</a>
         <a class="button link-button delete-button" href="{% url 'note_delete' object.pk %}">Delete</a>
     </div>

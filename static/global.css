@@ -2,6 +2,7 @@
 body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 /* Body styles */
@@ -9,33 +10,46 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #121212; /* Dark background color */
     color: #fff; /* Light text color */
+    margin: 0; /* Supprime les marges par défaut du corps */
+    padding: 0; /* Supprime les marges internes par défaut du corps */
+    overflow: hidden; /* Empêche le défilement de la fenêtre entière */
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
 }
 
-/* Form styles */
-form {
-    margin-top: 20px;
-}
-
-/* Container styles */
 .container {
-    max-width: 800px;
-    margin: 50px auto;
+    width: 90%;
+    margin: auto; /* Pour centrer horizontalement */
     padding: 20px;
     background-color: #1e1e1e; /* White background color */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-/* Title styles */
-h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
+#container{
+    height: 90%;
 }
 
-/* List styles */
 ul {
+    border-top: 2px solid #2d2d2d;
     list-style-type: none;
+    margin-top: 0;
     padding: 0;
+    overflow-y: auto; /* Ajoute une barre de défilement verticale si nécessaire */
+    max-height: calc(100vh - 180px);
+    height: 90%;
+}
+
+h1 {
+    margin-top: 0; /* Enlève l'espace entre le haut du conteneur et le titre h1 */
+    margin-bottom: 20px; /* Augmente l'espace en bas du titre h1 */
+    font-size: 32px;
+}
+    
+/* Form styles */
+form {
+    margin-top: 20px;
 }
 
 /* Styles pour le libellé */
@@ -102,8 +116,6 @@ button:hover {
     white-space: nowrap;
 }
 
-
-
 /* Link styles */
 .button {
     font-family: 'Roboto', sans-serif;
@@ -134,10 +146,10 @@ input[type="submit"]:hover {
     background-color: #e6ac00; /* Darker golden color on hover */
 }
 
-.cancel-button, .delete-button{
+.cancel-button, .delete-button, .back-button{
     background-color: #ccc;
 }
 
-.cancel-button:hover, .delete-button:hover{
+.cancel-button:hover, .delete-button:hover, .back-button:hover{
     background-color: #a0a0a0;
 }
