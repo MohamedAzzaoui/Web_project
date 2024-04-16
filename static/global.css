@@ -12,7 +12,6 @@ body {
     color: #fff; /* Light text color */
     margin: 0; /* Supprime les marges par défaut du corps */
     padding: 0; /* Supprime les marges internes par défaut du corps */
-    overflow: hidden; /* Empêche le défilement de la fenêtre entière */
     display: flex;
     justify-content: center; /* Centrer horizontalement */
     align-items: center; /* Centrer verticalement */
@@ -29,6 +28,14 @@ body {
 
 #container{
     height: 90%;
+}
+
+.note-data{
+    border-top: 2px solid #2d2d2d;
+    padding-top: 0px;
+    margin-bottom: 500px;
+    overflow-y: auto;
+    max-height: calc(100vh - 300px);
 }
 
 ul {
@@ -76,12 +83,13 @@ input[type="text"] {
 /* Styles pour le champ de texte multi-lignes */
 textarea {
     width: 100%; /* Largeur du champ */
-    height: 20%; /* Hauteur du champ */
+    height: 40vh; /* Hauteur du champ */
     box-sizing: border-box;
     padding: 10px; /* Espacement intérieur */
     border: 1px solid #ccc; /* Bordure légère */
     border-radius: 5px; /* Bordure arrondie */
     resize: vertical; /* Autoriser le redimensionnement vertical */
+    font-size: 14px;
 }
 
 button:hover {

@@ -14,6 +14,7 @@
             {% csrf_token %}
             {{ form.as_p }}
             <input class="button" type="submit" value="Create">
+            <a class="button link-button delete-button" href="{% url 'note_list' %}">Back</a>
         </form>
     </div>
 </body>
