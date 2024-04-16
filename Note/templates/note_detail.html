@@ -16,6 +16,7 @@
         </div>
         <a class="button link-button" href="{% url 'note_update' note.pk %}">Edit</a>
         <a class="button link-button delete-button" href="{% url 'note_delete' object.pk %}">Delete</a>
+        <a class="button link-button delete-button" href="{% url 'note_list' %}">Back</a>
     </div>
 </body>
 </html>
