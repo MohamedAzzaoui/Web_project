@@ -9,7 +9,10 @@
 </head>
 <body>
     <div class="container" id="container">
-        <h1>List of Notes</h1>
+        <div class="list-title">
+            <h1>List of Notes</h1>
+            <p>Number of notes: {{ object_list|length }}</p>
+        </div>
         <ul>
             {% for note in object_list %}
             <li>
