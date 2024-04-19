@@ -8,7 +8,7 @@ body, html {
 /* Body styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #121212; /* Dark background color */
+    background-color: #393d44; /* Dark background color */
     color: #fff; /* Light text color */
     margin: 0; /* Supprime les marges par défaut du corps */
     padding: 0; /* Supprime les marges internes par défaut du corps */
@@ -112,7 +112,7 @@ button:hover {
     box-sizing: border-box;
     width: 100%;
     padding: 0px 20px;
-    background-color: #444;
+    background-color:  #373a3f;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
