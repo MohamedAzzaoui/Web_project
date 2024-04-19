@@ -37,3 +37,16 @@ class NoteDelete(DeleteView):
     model = Note
     template_name = 'note_confirm_delete.html'
     success_url = reverse_lazy('note_list')
+
+from django.shortcuts import render, redirect
+from .forms import NoteForm
+
+def create_note(request):
+    if request.method == 'POST':
+        form = NoteForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('note_list')  # Redirige vers la liste des notes après la création
+    else:
+        form = NoteForm()
+    return render(request, 'create_note.html', {'form': form})

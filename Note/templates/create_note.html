@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Note</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'global.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Create a Note</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="button link-button" type="submit">Submit</button>
+            <a class="button link-button delete-button" href="{% url 'note_list' %}">Back</a>
+        </form>
+    </div>
+</body>
+</html>
