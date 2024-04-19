@@ -1,12 +1,9 @@
-
 from django.db import models
-from django.contrib import admin
-
-
 
 class Note(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
+    image = models.ImageField(upload_to='note_images/', null=True, blank=True)  # Champ pour l'image
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

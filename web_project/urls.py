@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Note import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.NoteList.as_view(), name='note_list'),
@@ -25,3 +27,5 @@ urlpatterns = [
     path('<int:pk>/update/', views.NoteUpdate.as_view(), name='note_update'),
     path('<int:pk>/delete/', views.NoteDelete.as_view(), name='note_delete'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
